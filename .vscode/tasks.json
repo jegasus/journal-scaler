@@ -1,0 +1,38 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "copy-scripts",
+        "type": "shell",
+        "windows": {
+          "command": "${workspaceFolder}/.vscode/my_copy.cmd"
+        },
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      },
+      { 
+        "label": "run-foundry",
+        "type": "process",
+        "windows": {
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" \"C:\\Program Files\\FoundryVTT_NodeJS_079\\resources\\app\\main.js\" --port=30000 --world=test --dataPath=D:\\Dropbox\\Foundry\\dev_data"
+        },
+        "group": "test",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        }
+      },
+      {
+        "label": "copy-and-run",
+        "dependsOrder": "sequence",
+        "dependsOn": ["copy-scripts", "run-foundry"]
+      }
+      
+      
+    ]
+  }

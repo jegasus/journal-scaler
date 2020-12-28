@@ -1,0 +1,6 @@
+rmdir /S /Q "..\\..\\dev_data\\Data\\modules\\journal-scaler"
+mkdir "..\\..\\dev_data\\Data\\modules\\journal-scaler"
+Xcopy /E /I /Y /Q scripts "..\\..\\dev_data\\Data\\modules\\journal-scaler\\scripts"
+Xcopy /E /I /Y /Q languages "..\\..\\dev_data\\Data\\modules\\journal-scaler\\languages"
+Xcopy /E /I /Y /Q styles "..\\..\\dev_data\\Data\\modules\\journal-scaler\\styles"
+Xcopy /Y /Q module.json "..\\..\\dev_data\\Data\\modules\\journal-scaler"

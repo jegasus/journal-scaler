@@ -1,0 +1,34 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Foundry Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:30000",
+            //"webRoot": "${workspaceFolder}",
+            "pathMapping": {
+                "/modules/journal-scaler": "${workspaceFolder}",
+                "/modules/journal-scaler/scripts": "${workspaceFolder}/scripts",
+            },
+            "trace": true,
+            //"preLaunchTask":"${workspaceFolder}/.vscode/tasks.json"
+            //"preLaunchTask":"copy-and-run"
+            "preLaunchTask":"copy-scripts"
+        },
+
+        {
+            "name": "Launch Firefox",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "url": "http://localhost:30000",
+            "webRoot": "${workspaceFolder}"
+        }
+
+
+    ]
+}

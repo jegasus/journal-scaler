@@ -22,6 +22,9 @@ A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the fo
 ## 0.0.1 - Released on 2021-01-01
 Initial release. 
 
+## 0.0.2 - Released on 2021-01-02
+Fixed scaling bug when journal window was open but not hovered by the mouse.
+
 Got the basic funtionality to work.
 
 # Acknowledgements

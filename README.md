@@ -16,6 +16,8 @@ A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the fo
 - Step 2: hover your mouse cursor over a journal sheet window
 - Step 3: hold down `ctrl` and use your mouse wheel to scroll either up or down for increasing or decreasing the font sizes, respectively
 
+![Journal scaler in action](img/module_in_action.gif)
+
 # Changelog
 ## 0.0.1 - Released on 2021-01-01
 Initial release. 

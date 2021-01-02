@@ -75,7 +75,7 @@ Hooks.once('setup', function () {
       MODULE_ID, 
       'KeyboardManager.prototype._onWheel', 
         function(existing_onWheel, event) {
-          event.preventDefault();
+          //event.preventDefault();
           //console.log("I'M IN, BABY! BOO-MUTHA-FUCKIN'-YAAA!!!")
           _onWheel_override.bind(this)(event);
           return existing_onWheel.bind(this)(event);

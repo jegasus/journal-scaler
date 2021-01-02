@@ -9,7 +9,7 @@
 
 
 # Journal Scaler
-A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the font sizes inside journal windows using `ctrl+mouseWheelUp` and `ctrl+mouseWheelDown`.
+A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the font sizes inside journal windows using <kbd>ctrl</kbd>+`mouseWheelUp` and <kbd>ctrl</kbd>+`mouseWheelDown`.
 
 # Instructions
 - Step 1: activate this module in your world 

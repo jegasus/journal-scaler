@@ -11,6 +11,9 @@
     "/scripts/journal-scaler.js",
     "/scripts/shim.js"
   ],
+  "styles": [
+    "/styles/journal-scaler.css"],
+
   "url": "https://github.com/cswendrowski/FoundryVTT-module",
   "manifest": "https://github.com/cswendrowski/FoundryVTT-module/releases/download/latest/module.json",
   "download": "https://github.com/cswendrowski/FoundryVTT-module/releases/download/0.0.1/module.zip"

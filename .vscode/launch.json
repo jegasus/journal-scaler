@@ -28,7 +28,5 @@
             "url": "http://localhost:30000",
             "webRoot": "${workspaceFolder}"
         }
-
-
     ]
 }

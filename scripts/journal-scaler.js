@@ -32,7 +32,7 @@ function _onWheel_override(event){
   let i;
   let journal_win;
   let foundit = false;
-  for (i in jrn_sheet_windows) {
+  for (i = 0; i < jrn_sheet_windows.length; i++){
     journal_win = jrn_sheet_windows[i];
     if (journal_win.contains(event.target)){
       foundit = true;
@@ -75,7 +75,7 @@ Hooks.once('setup', function () {
       MODULE_ID, 
       'KeyboardManager.prototype._onWheel', 
         function(existing_onWheel, event) {
-          event.preventDefault();
+          //event.preventDefault();
           //console.log("I'M IN, BABY! BOO-MUTHA-FUCKIN'-YAAA!!!")
           _onWheel_override.bind(this)(event);
           return existing_onWheel.bind(this)(event);

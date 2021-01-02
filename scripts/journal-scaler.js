@@ -9,12 +9,10 @@ function getSetting (settingName) {
 
 //CONFIG.debug.hooks = true;
 
-console.log("IF YOU USE THIS MODULE YOU WILL VOMIT A WEDDING")
+console.log("IF YOU USE THIS MODULE YOU WILL VOMIT A WEDDING!!!!")
 
 // Need to edit this function:
 // KeyboardManager._onWheel, line 2834 from foundry.js
-
-const MAX_ZOOM_OUT = 0.1;
 
 function _onWheel_override(event){
   //console.log("NOW WE'RE REALLY IN THERE, BABY!!!!");

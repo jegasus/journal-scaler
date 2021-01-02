@@ -64,9 +64,9 @@ function _onWheel_override(event){
   // If not, just exit the function.
   if (event.ctrlKey == false) { return; };
 
+  // Get the list of all windows currently open that are journal-sheet windows
   let jrn_sheet_windows = document.getElementsByClassName('app window-app sheet journal-sheet');
   
-  // Check if there are ANY journal sheet windows open.
   // If there are none, just exit the function.
   if (jrn_sheet_windows.length == 0) { return; };
   

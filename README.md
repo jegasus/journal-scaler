@@ -9,7 +9,7 @@ A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the fo
 # Instructions
 - Step 1: activate this module in your world 
 - Step 2: hover your mouse cursor over a journal sheet window
-- Step 3: hold down `ctrl` and use your mouse wheel to scroll either up or down for increasing or decreasing the font sizes, respectively
+- Step 3: hold down `ctrl` and use your mouse wheel to scroll either up or down to increase or decrease the font sizes, respectively
 
 ![Journal scaler in action](img/module_in_action.gif)
 

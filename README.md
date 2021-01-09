@@ -1,5 +1,6 @@
 ![](https://img.shields.io/badge/Foundry-v0.7.9-informational)
-![Latest Release Download Count](https://img.shields.io/github/downloads/jegasus/journal-scaler/latest/module.zip) 
+![Latest Release Download Count](https://img.shields.io/github/downloads/jegasus/journal-scaler/latest/module.zip?label=Downloads+latest+release) 
+![GitHub All Releases](https://img.shields.io/github/downloads/jegasus/journal-scaler/total?label=Downloads+total)  
 ![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fjournal-scaler&colorB=4aa94a)
 
 

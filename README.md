@@ -37,5 +37,5 @@ Got the basic funtionality to work.
 This module relied heavily on [The League of Foundry Developer's FoundryVTT Module Template](https://github.com/League-of-Foundry-Developers/FoundryVTT-Module-Template). This is a great resource to get started in developing cool stuff for FoundryVTT!
 
 ## ruipin's libWrapper
-This module uses [ruipin's libWrapper library](https://github.com/ruipin/fvtt-lib-wrapper/wiki/Modules-using-libWrapper). Take a look at his stuff if you want to develop modules for FVTT that override its default behaviors.
+This module uses [ruipin's libWrapper library](https://github.com/ruipin/fvtt-lib-wrapper). Take a look at his stuff if you want to develop modules for FVTT that override its default behaviors.
 

@@ -80,7 +80,7 @@ Hooks.once('setup', function () {
           _onWheel_override.bind(this)(event);
           return existing_onWheel.bind(this)(event);
       },
-      'MIXED',
+      'WRAPPER',
     )
   }
 )

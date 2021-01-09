@@ -15,6 +15,11 @@ A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the fo
 
 # Changelog
 
+## 0.0.4 - Released on 2021-01-08
+Now using updated `shim.js` from [libWrapper v1.3.4.0](https://github.com/ruipin/fvtt-lib-wrapper/releases/tag/v1.3.4.0).
+
+Fixed wrapper type from `MIXED` to `WRAPPER`.
+
 ## 0.0.3 - Released on 2021-01-02
 Real for scaling bug when journal window was open but not hovered by the mouse.
 

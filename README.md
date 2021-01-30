@@ -16,6 +16,9 @@ A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the fo
 
 # Changelog
 
+## 0.0.5 - Released on 2021-01-30
+Fixed Firefox bug. Now module works in Chrome and Firefox.
+
 ## 0.0.4 - Released on 2021-01-08
 Now using updated `shim.js` from [libWrapper v1.3.4.0](https://github.com/ruipin/fvtt-lib-wrapper/releases/tag/v1.3.4.0).
 

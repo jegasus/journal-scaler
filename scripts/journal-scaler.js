@@ -50,10 +50,10 @@ function _onWheel_override(event){
   
   // Find the direction of the mousewheel scroll
   let which_dir = '';
-  if (event.wheelDelta > 0) {
+  if ((event.wheelDelta > 0) | (event.deltaY < 0)){
     which_dir = 'bigger';
   }
-  else if (event.wheelDelta < 0) {
+  else if ((event.wheelDelta < 0) | (event.deltaY > 0)) {
     which_dir = 'smaller';
   }
 

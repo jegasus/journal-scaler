@@ -29,7 +29,7 @@ function _onWheel_imageResize(journal_win, which_dir) {
   // Get the DOM element of the journal editor and change its style
   let journal_image = journal_win.getElementsByClassName('lightbox-image')[0];
   let current_size_str = journal_image.style.backgroundSize;
-  let current_size = current_size_str.includes("%") ? Number(current_size_str.slice(0, current_size_str.length-1)) : 75;
+  let current_size = current_size_str.includes("%") ? Number(current_size_str.slice(0, current_size_str.length-1)) : 100;
   if (which_dir == 'bigger') {
     journal_image.style.backgroundSize = `${String(current_size + 5)}%`
   }
@@ -49,15 +49,11 @@ function _onWheel_override(event){
   if (event.ctrlKey == false) { return; };
 
   // Get the list of all windows currently open that are journal-sheet windows
-  let jrn_sheet_windows = document.getElementsByClassName('app window-app sheet journal-sheet');
+  let jrn_sheet_windows = document.getElementsByClassName('sheet journal-sheet');
 
   // If there are none, just exit the function.
   if (jrn_sheet_windows.length == 0) {
-    // Support for GM Screen module
-    jrn_sheet_windows = document.getElementsByClassName('gm-screen-grid-cell-content sheet journal-sheet');
-    if (jrn_sheet_windows.length == 0) {
-      return;
-    }
+    return;
   };
 
   // Trying to find the window hovered with the mouse
@@ -117,6 +113,7 @@ Hooks.once('setup', function () {
 
 Hooks.on('renderJournalSheet', function() {
   let journal_images = document.getElementsByClassName('lightbox-image');
+  let sensitivity = 5; // Configurable?
   let pos_x;
   let pos_y;
   let init_x;
@@ -129,8 +126,8 @@ Hooks.on('renderJournalSheet', function() {
         is_holding = true;
         let pos_x_str = journal_image.style.backgroundPositionX;
         let pos_y_str = journal_image.style.backgroundPositionY;
-        pos_x = Number(pos_x_str.slice(0, pos_x_str.length-2));
-        pos_y = Number(pos_y_str.slice(0, pos_y_str.length-2));
+        pos_x = pos_x_str == '' ? 50 : Number(pos_x_str.slice(0, pos_x_str.length-1));
+        pos_y = pos_y_str == '' ? 50 : Number(pos_y_str.slice(0, pos_y_str.length-1));
         init_x = e.offsetX;
         init_y = e.offsetY;
       }
@@ -138,8 +135,8 @@ Hooks.on('renderJournalSheet', function() {
     journal_image.addEventListener("mousemove", (e) => {
       if (is_holding) {
         let base_size = journal_image.style['backgroundSize'];
-        journal_image.style.backgroundPositionX = `${pos_x + e.offsetX - init_x}px`;
-        journal_image.style.backgroundPositionY = `${pos_y + e.offsetY - init_y}px`;
+        journal_image.style.backgroundPositionX = `${pos_x + (e.offsetX - init_x)/sensitivity}%`;
+        journal_image.style.backgroundPositionY = `${pos_y + (e.offsetY - init_y)/sensitivity}%`;
       }
     });
     journal_image.addEventListener("mouseup", (e) => {

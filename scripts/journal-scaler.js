@@ -117,25 +117,34 @@ Hooks.once('setup', function () {
 
 Hooks.on('renderJournalSheet', function() {
   let journal_images = document.getElementsByClassName('lightbox-image');
+  let pos_x;
+  let pos_y;
+  let init_x;
+  let init_y;
   for (var i = 0; i < journal_images.length; i++) {
     let journal_image = journal_images[i];
-    let isHolding = false;
+    let is_holding = false;
     journal_image.addEventListener("mousedown", (e) => {
-      if (!isHolding && e.button === 2) {
-        isHolding = true;
+      if (!is_holding && e.button === 2) {
+        is_holding = true;
+        let pos_x_str = journal_image.style.backgroundPositionX;
+        let pos_y_str = journal_image.style.backgroundPositionY;
+        pos_x = Number(pos_x_str.slice(0, pos_x_str.length-2));
+        pos_y = Number(pos_y_str.slice(0, pos_y_str.length-2));
+        init_x = e.offsetX;
+        init_y = e.offsetY;
       }
     });
     journal_image.addEventListener("mousemove", (e) => {
-      if (isHolding) {
+      if (is_holding) {
         let base_size = journal_image.style['backgroundSize'];
-        let size_mutiplier = base_size == '' ? 1.0 : Number(base_size.slice(0, base_size.length-1)) / 100;
-        journal_image.style.backgroundPositionX = `${e.clientX - 500}px`;
-        journal_image.style.backgroundPositionY = `${e.clientY - 500}px`;
+        journal_image.style.backgroundPositionX = `${pos_x + e.offsetX - init_x}px`;
+        journal_image.style.backgroundPositionY = `${pos_y + e.offsetY - init_y}px`;
       }
     });
     journal_image.addEventListener("mouseup", (e) => {
-      if (isHolding) {
-        isHolding = false;
+      if (is_holding) {
+        is_holding = false;
       }
     });
   }

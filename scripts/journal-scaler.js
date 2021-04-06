@@ -52,7 +52,13 @@ function _onWheel_override(event){
   let jrn_sheet_windows = document.getElementsByClassName('app window-app sheet journal-sheet');
 
   // If there are none, just exit the function.
-  if (jrn_sheet_windows.length == 0) { return; };
+  if (jrn_sheet_windows.length == 0) {
+    // Support for GM Screen module
+    jrn_sheet_windows = document.getElementsByClassName('gm-screen-grid-cell-content sheet journal-sheet');
+    if (jrn_sheet_windows.length == 0) {
+      return;
+    }
+  };
 
   // Trying to find the window hovered with the mouse
   // among the opened journal sheet windows.
@@ -84,7 +90,8 @@ function _onWheel_override(event){
     which_dir = 'smaller';
   }
 
-  if (journal_win.className.includes("image-popout")) {
+  // Check if this is an image journal entry
+  if (journal_win.querySelector('.lightbox-image')) {
     _onWheel_imageResize(journal_win, which_dir);
   } else {
     _onWheel_textResize(journal_win, which_dir);
@@ -114,7 +121,7 @@ Hooks.on('renderJournalSheet', function() {
     let journal_image = journal_images[i];
     let isHolding = false;
     journal_image.addEventListener("mousedown", (e) => {
-      if (!isHolding) {
+      if (!isHolding && e.button === 2) {
         isHolding = true;
       }
     });
@@ -122,8 +129,8 @@ Hooks.on('renderJournalSheet', function() {
       if (isHolding) {
         let base_size = journal_image.style['backgroundSize'];
         let size_mutiplier = base_size == '' ? 1.0 : Number(base_size.slice(0, base_size.length-1)) / 100;
-        journal_image.style.backgroundPositionX = `calc(${50*size_mutiplier}% + ${-e.offsetX*size_mutiplier}px + ${500*size_mutiplier}px)`;
-        journal_image.style.backgroundPositionY = `calc(${50*size_mutiplier}% + ${-e.offsetY*size_mutiplier}px + ${300*size_mutiplier}px)`;
+        journal_image.style.backgroundPositionX = `${e.clientX - 500}px`;
+        journal_image.style.backgroundPositionY = `${e.clientY - 500}px`;
       }
     });
     journal_image.addEventListener("mouseup", (e) => {

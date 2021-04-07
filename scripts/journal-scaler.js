@@ -143,7 +143,7 @@ Hooks.on('renderJournalSheet', function() {
     document.addEventListener("mouseup", (e) => {
       if (is_holding) {
         is_holding = false;
-        journal_image.style.cursor = 'default';
+        journal_image.style.cursor = '';
       }
     });
   }

@@ -124,6 +124,7 @@ Hooks.on('renderJournalSheet', function() {
     journal_image.addEventListener("mousedown", (e) => {
       if (!is_holding && e.button === 2) {
         is_holding = true;
+        journal_image.style.cursor = 'move';
         let pos_x_str = journal_image.style.backgroundPositionX;
         let pos_y_str = journal_image.style.backgroundPositionY;
         pos_x = pos_x_str == '' ? 50 : Number(pos_x_str.slice(0, pos_x_str.length-1));
@@ -139,9 +140,10 @@ Hooks.on('renderJournalSheet', function() {
         journal_image.style.backgroundPositionY = `${pos_y + (e.offsetY - init_y)/sensitivity}%`;
       }
     });
-    journal_image.addEventListener("mouseup", (e) => {
+    document.addEventListener("mouseup", (e) => {
       if (is_holding) {
         is_holding = false;
+        journal_image.style.cursor = 'default';
       }
     });
   }

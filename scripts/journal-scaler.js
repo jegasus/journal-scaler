@@ -113,7 +113,7 @@ Hooks.once('setup', function () {
 
 Hooks.on('renderJournalSheet', function() {
   let journal_images = document.getElementsByClassName('lightbox-image');
-  let sensitivity = 5; // Configurable?
+  let sensitivity = 2; // Configurable?
   let pos_x;
   let pos_y;
   let init_x;

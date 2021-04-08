@@ -11,6 +11,7 @@ function getSetting (settingName) {
 
 console.log("IF YOU USE THIS MODULE YOU WILL VOMIT A WEDDING!!!!")
 
+// Increases font size of journal entries depending on the direction
 function _onWheel_textResize(journal_win, which_dir) {
   // Get the DOM element of the journal editor and change its style
   let journal_editor = journal_win.getElementsByClassName('editor-content')[0]
@@ -24,6 +25,7 @@ function _onWheel_textResize(journal_win, which_dir) {
   }
 }
 
+// Increases image size of image journal entries depending on the direction
 function _onWheel_imageResize(journal_win, which_dir) {
   // Get the DOM element of the journal editor and change its style
   let journal_image = journal_win.getElementsByClassName('lightbox-image')[0];
@@ -106,7 +108,8 @@ Hooks.once('setup', function () {
   }
 )
 
-
+// renderJournalSheet triggers on new opened Journal Sheets, pre-loaded ones and/or GM Sheet journals
+// this functionality tags all of these sheets that have an image, with mouse controls for zoom in and out
 Hooks.on('renderJournalSheet', function() {
   let journal_images = document.getElementsByClassName('lightbox-image');
   let sensitivity = 2; // Configurable?
@@ -114,9 +117,11 @@ Hooks.on('renderJournalSheet', function() {
   let pos_y;
   let init_x;
   let init_y;
+  // Make sure all open journal sheet images receive this functionality (GM Screen support, and other triggers)
   for (var i = 0; i < journal_images.length; i++) {
     let journal_image = journal_images[i];
     let is_holding = false;
+    // Event Listener that triggers on mousedown of RIGHT click (we could also use middle-mouse button?)
     journal_image.addEventListener("mousedown", (event) => {
       if (!is_holding && event.button === 2) {
         is_holding = true;
@@ -131,11 +136,12 @@ Hooks.on('renderJournalSheet', function() {
     });
     journal_image.addEventListener("mousemove", (event) => {
       if (is_holding) {
-        let base_size = journal_image.style['backgroundSize'];
+        // update position based on last position offset
         journal_image.style.backgroundPositionX = `${pos_x + (event.offsetX - init_x)/sensitivity}%`;
         journal_image.style.backgroundPositionY = `${pos_y + (event.offsetY - init_y)/sensitivity}%`;
       }
     });
+    // release and restore cursor on mouse release
     document.addEventListener("mouseup", (event) => {
       if (is_holding) {
         is_holding = false;

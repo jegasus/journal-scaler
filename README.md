@@ -12,9 +12,18 @@ A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the fo
 - Step 2: hover your mouse cursor over a journal sheet window
 - Step 3: hold down `ctrl` and use your mouse wheel to scroll either up or down to increase or decrease the font sizes, respectively
 
+**Note**: The Journal Scaler also allows you to zoom in and out of Journal Images.
+
 ![Journal scaler in action](img/module_in_action.gif)
 
+![Journal scaler in action](img/module_in_action_2.gif)
+
 # Changelog
+
+## 0.0.6 - Released on 2021-04-08
+Added new feature! The module now allows users to Zoom in and out of Journal Images.
+
+Very special thanks to [JeansenVaars](https://github.com/saif-ellafi) (Discord user: JeansenVaars#2857) for generously offering the chunks of code needed to add this functionality to the module.
 
 ## 0.0.5 - Released on 2021-01-30
 Fixed Firefox bug. Now module works in Chrome and Firefox.
@@ -42,4 +51,7 @@ This module relied heavily on [The League of Foundry Developer's FoundryVTT Modu
 
 ## ruipin's libWrapper
 This module uses [ruipin's libWrapper library](https://github.com/ruipin/fvtt-lib-wrapper). Take a look at his stuff if you want to develop modules for FVTT that override its default behaviors.
+
+## JeansenVaars
+Special thanks to [JeansenVaars](https://github.com/saif-ellafi) (Discord user JeansenVaars#2857) who generously provided the code for the journal image zoom functinality. 
 

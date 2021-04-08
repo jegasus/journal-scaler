@@ -12,7 +12,6 @@ function getSetting (settingName) {
 console.log("IF YOU USE THIS MODULE YOU WILL VOMIT A WEDDING!!!!")
 
 function _onWheel_textResize(journal_win, which_dir) {
-
   // Get the DOM element of the journal editor and change its style
   let journal_editor = journal_win.getElementsByClassName('editor-content')[0]
   let current_size_str = journal_editor.style.fontSize
@@ -42,8 +41,6 @@ function _onWheel_imageResize(journal_win, which_dir) {
 // KeyboardManager._onWheel, line 2834 from foundry.js
 
 function _onWheel_override(event){
-  //console.log("NOW WE'RE REALLY IN THERE, BABY!!!!");
-
   // Check if control is pressed.
   // If not, just exit the function.
   if (event.ctrlKey == false) { return; };
@@ -101,8 +98,6 @@ Hooks.once('setup', function () {
       MODULE_ID,
       'KeyboardManager.prototype._onWheel',
         function(existing_onWheel, event) {
-          //event.preventDefault();
-          //console.log("I'M IN, BABY! BOO-MUTHA-FUCKIN'-YAAA!!!")
           _onWheel_override.bind(this)(event);
           return existing_onWheel.bind(this)(event);
       },
@@ -110,6 +105,7 @@ Hooks.once('setup', function () {
     )
   }
 )
+
 
 Hooks.on('renderJournalSheet', function() {
   let journal_images = document.getElementsByClassName('lightbox-image');
@@ -121,26 +117,26 @@ Hooks.on('renderJournalSheet', function() {
   for (var i = 0; i < journal_images.length; i++) {
     let journal_image = journal_images[i];
     let is_holding = false;
-    journal_image.addEventListener("mousedown", (e) => {
-      if (!is_holding && e.button === 2) {
+    journal_image.addEventListener("mousedown", (event) => {
+      if (!is_holding && event.button === 2) {
         is_holding = true;
         journal_image.style.cursor = 'move';
         let pos_x_str = journal_image.style.backgroundPositionX;
         let pos_y_str = journal_image.style.backgroundPositionY;
         pos_x = pos_x_str == '' ? 50 : Number(pos_x_str.slice(0, pos_x_str.length-1));
         pos_y = pos_y_str == '' ? 50 : Number(pos_y_str.slice(0, pos_y_str.length-1));
-        init_x = e.offsetX;
-        init_y = e.offsetY;
+        init_x = event.offsetX;
+        init_y = event.offsetY;
       }
     });
-    journal_image.addEventListener("mousemove", (e) => {
+    journal_image.addEventListener("mousemove", (event) => {
       if (is_holding) {
         let base_size = journal_image.style['backgroundSize'];
-        journal_image.style.backgroundPositionX = `${pos_x + (e.offsetX - init_x)/sensitivity}%`;
-        journal_image.style.backgroundPositionY = `${pos_y + (e.offsetY - init_y)/sensitivity}%`;
+        journal_image.style.backgroundPositionX = `${pos_x + (event.offsetX - init_x)/sensitivity}%`;
+        journal_image.style.backgroundPositionY = `${pos_y + (event.offsetY - init_y)/sensitivity}%`;
       }
     });
-    document.addEventListener("mouseup", (e) => {
+    document.addEventListener("mouseup", (event) => {
       if (is_holding) {
         is_holding = false;
         journal_image.style.cursor = '';

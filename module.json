@@ -1,19 +1,23 @@
 {
   "name": "journal-scaler",
   "title": "Journal Scaler",
-  "description": "",
-  "version": "0.0.6",
-  "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "0.7.9",
+  "description": "Allows users to change the font size inside Journal entries. Also allows users to zoom into Journal images.",
+  "version": "0.0.7",
+  "minimumCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.8",
   "author": "jegasus",
   "esmodules": [
-    "/scripts/journal-scaler.js",
-    "/scripts/shim.js"
+    "/scripts/journal-scaler.js"
   ],
   "styles": [
     "/styles/journal-scaler.css"
   ],
+  "dependencies": [
+    {
+        "name": "lib-wrapper"
+    }
+  ],
   "url": "https://github.com/jegasus/journal-scaler",
   "manifest": "https://github.com/jegasus/journal-scaler/releases/latest/download/module.json",
-  "download": "https://github.com/jegasus/journal-scaler/releases/download/0.0.6/module.zip"
+  "download": "https://github.com/jegasus/journal-scaler/releases/download/0.0.7/module.zip"
 }

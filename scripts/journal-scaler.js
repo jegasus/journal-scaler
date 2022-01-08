@@ -1,4 +1,4 @@
-import { libWrapper } from './shim.js';
+//import { libWrapper } from './shim.js';
 
 const MODULE_ID = 'journal-scaler';
 const MODULE_NAME = "Journal Scaler";
@@ -9,6 +9,11 @@ function getSetting (settingName) {
 
 //CONFIG.debug.hooks = true;
 console.log("IF YOU USE THIS MODULE YOU WILL VOMIT A WEDDING!!!!")
+
+Hooks.once('ready', () => {
+  if(!game.modules.get('lib-wrapper')?.active && game.user.isGM)
+      ui.notifications.error("The 'Journal Scaler' module requires the 'libWrapper' module. Please install and activate it.");
+});
 
 // Overriding original mousewheel behavior
 Hooks.once('setup', function () {

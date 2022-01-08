@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Foundry-v0.7.9-informational)
+![](https://img.shields.io/badge/Foundry-v0.8.8-informational)
 ![Latest Release Download Count](https://img.shields.io/github/downloads/jegasus/journal-scaler/latest/module.zip?label=Downloads+latest+release) 
 ![GitHub All Releases](https://img.shields.io/github/downloads/jegasus/journal-scaler/total?label=Downloads+total)  
 ![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fjournal-scaler&colorB=4aa94a)
@@ -6,6 +6,11 @@
 
 # Journal Scaler
 A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the font sizes inside journal windows using <kbd>ctrl</kbd>+`mouseWheelUp` and <kbd>ctrl</kbd>+`mouseWheelDown`.
+
+# Installation and setup
+The Journal Scaler module requires you to install [ruipin's libWrapper library](https://github.com/ruipin/fvtt-lib-wrapper). 
+
+Activating both modules in your world will allow you to use the Journal Scaler.
 
 # Instructions
 - Step 1: activate this module in your world 
@@ -19,6 +24,9 @@ A [FoundryVTT](https://foundryvtt.com/) module that enables you to change the fo
 ![Journal scaler in action](img/module_in_action_2.gif)
 
 # Changelog
+
+## 0.0.7 - Released on 2021-XX-XX
+Updated to version 0.8.x. Removed the use of the `libWrapper` shim. Now, the full `libWrapper` library is required to run this module.
 
 ## 0.0.6 - Released on 2021-04-08
 Added new feature! The module now allows users to Zoom in and out of Journal Images.

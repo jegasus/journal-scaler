@@ -25,7 +25,7 @@ Activating both modules in your world will allow you to use the Journal Scaler.
 
 # Changelog
 
-## 0.0.8 - Released on 2022-xx-xx
+## 0.0.8 - Released on 2022-01-09
 Updated module to work on Foundry v9.
 
 ## 0.0.7 - Released on 2021-08-01

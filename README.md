@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Foundry-v0.8.8-informational)
+![](https://img.shields.io/badge/Foundry-v9-informational)
 ![Latest Release Download Count](https://img.shields.io/github/downloads/jegasus/journal-scaler/latest/module.zip?label=Downloads+latest+release) 
 ![GitHub All Releases](https://img.shields.io/github/downloads/jegasus/journal-scaler/total?label=Downloads+total)  
 ![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fjournal-scaler&colorB=4aa94a)
@@ -25,8 +25,11 @@ Activating both modules in your world will allow you to use the Journal Scaler.
 
 # Changelog
 
-## 0.0.7 - Released on 2021-XX-XX
-Updated to version 0.8.x. Removed the use of the `libWrapper` shim. Now, the full `libWrapper` library is required to run this module.
+## 0.0.8 - Released on 2022-xx-xx
+Updated module to work on Foundry v9.
+
+## 0.0.7 - Released on 2021-08-01
+Updated module to work on Foundry 0.8.x. Removed the use of the `libWrapper` shim. Now, the full `libWrapper` library is required to run this module.
 
 ## 0.0.6 - Released on 2021-04-08
 Added new feature! The module now allows users to Zoom in and out of Journal Images.

@@ -19,7 +19,7 @@ Hooks.once('ready', () => {
 Hooks.once('setup', function () {
     libWrapper.register(
       MODULE_ID,
-      'KeyboardManager.prototype._onWheel',
+      'MouseManager.prototype._onWheel',
         function(existing_onWheel, event) {
           _onWheel_override.bind(this)(event);
           return existing_onWheel.bind(this)(event);
@@ -29,8 +29,8 @@ Hooks.once('setup', function () {
   }
 )
 
-// renderJournalSheet triggers on new opened Journal Sheets, pre-loaded ones and/or GM Sheet journals
-// this functionality tags all of these sheets that have an image, with mouse controls for zoom in and out
+// renderJournalSheet triggers on new opened Journal Sheets, pre-loaded ones and/or GM Sheet journals.
+// This functionality tags all of these sheets that have an image with mouse controls for zoom in and out.
 Hooks.on('renderJournalSheet', function() {
   let journal_images = document.getElementsByClassName('lightbox-image');
   let sensitivity = 2; // Configurable?

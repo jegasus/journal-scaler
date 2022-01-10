@@ -19,7 +19,7 @@
         "label": "run-foundry",
         "type": "process",
         "windows": {
-          "command": "\"C:\\Program Files\\nodejs\\node.exe\" \"C:\\Program Files\\FoundryVTT_NodeJS_079\\resources\\app\\main.js\" --port=30000 --world=test --dataPath=D:\\Dropbox\\Foundry\\dev_data"
+          "command": "\"C:\\Program Files\\nodejs\\node.exe\" \"C:\\Program Files\\FoundryVTT_NodeJS_V9.242\\resources\\app\\main.js\" --port=30000 --world=size-does-matter --dataPath=D:\\Games\\Foundry\\v9"
         },
         "group": "test",
         "presentation": {
